@@ -1,5 +1,4 @@
 # -*- Encoding: utf-8 -*-
-
 import os
 import re
 
@@ -32,8 +31,9 @@ for file in os.listdir(cache_dir):
         item_ret = item_ptn.findall(item)
 #        print ''.join(item_ret).decode('utf8')
         for k, v in item_ret:
-            print ''.join(k).decode('utf8')
-            print ''.join(v).decode('utf8')
+            if k.startswith('喜欢的菜：'):
+                print ''.join(k).decode('utf8')
+                print ''.join(v).decode('utf8')
     print '------'
 
 
