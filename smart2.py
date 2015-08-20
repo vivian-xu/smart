@@ -6,7 +6,6 @@ BASE_DIR = __file__[:-9]
 cache_dir = BASE_DIR + 'cache'
 item_ptn = re.compile(ur'class="user-info">(.*?)</p>',re.DOTALL)
 info_ptn = re.compile(ur'href="/member/(\d*)">(.*?)</a>.*?(\d*-\d*)?">',re.DOTALL)
-#info_ptn = re.compile(ur'href="/member/(\d*)">(.*?)</a>.*?title="(.*?)">',re.DOTALL)
 
 
 for f in os.listdir(cache_dir): #一个店铺主页
@@ -23,5 +22,3 @@ for f in os.listdir(cache_dir): #一个店铺主页
         info_ret = info_ptn.findall(item)
         for id,nm,sc in info_ret:
             print id,nm,sc
-#        for id,nm,sc,vi in info_ret:
-#            print id,nm,sc,vi
