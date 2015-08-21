@@ -21,4 +21,7 @@ for f in os.listdir(cache_dir): #一个店铺主页
     for item in item_ret:  # item是每一个评价的信息 ，item_ret 是一个店铺中所有评价
         info_ret = info_ptn.findall(item)
         for id,nm,sc in info_ret:
-            print id,nm,sc
+            if not sc:
+                del id,nm,sc
+            else:
+                print id,nm,sc
